@@ -12,20 +12,10 @@ export class App extends Component {
     bad: 0
   }
 
-  onLeaveFeedback = (feetback) => {
-    if(feetback === 'Good') {
+  onLeaveFeedback = (option) => {
       this.setState(prevState => {
-        return {good: prevState.good + 1}
+        return {[option]: prevState[option] + 1}
       })
-    } else if (feetback === 'Neutral') {
-      this.setState(prevState => {
-        return {neutral: prevState.neutral + 1}
-      })
-    } else if (feetback === 'Bad') {
-      this.setState(prevState => {
-        return {bad: prevState.bad + 1}
-      })
-    }
   }
 
   countTotalFeedback = () => {
@@ -51,7 +41,7 @@ export class App extends Component {
         }}
       >
         <Section title='Please leave your feetback'>
-          <FeetbackOptions onLeaveFeedback={this.onLeaveFeedback}/>
+          <FeetbackOptions options={Object.keys(this.state)} onLeaveFeedback={this.onLeaveFeedback}/>
         </Section>
         <Section title='Statistics'>
           {
