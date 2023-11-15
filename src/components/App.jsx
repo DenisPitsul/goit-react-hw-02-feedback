@@ -26,7 +26,6 @@ export class App extends Component {
         return {bad: prevState.bad + 1}
       })
     }
-    console.log(this.state);
   }
 
   countTotalFeedback = () => {
