@@ -11,6 +11,7 @@ export class FeetbackOptions extends Component {
                 {
                     options.map(option => 
                         <button 
+                            key={option}
                             type="button" 
                             className={classes.feetbackOptionsBtn}
                             onClick={() => onLeaveFeedback(option)}

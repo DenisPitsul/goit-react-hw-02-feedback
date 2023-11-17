@@ -32,7 +32,7 @@ export class App extends Component {
     return (
       <div
         style={{
-          height: '100vh',
+          paddingTop: '20px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
